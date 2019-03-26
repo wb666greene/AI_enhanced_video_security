@@ -65,7 +65,7 @@ The **AI_mt.py_Controller-Viewer.json** provides an example of how I end notific
            - MQTTcam/0
            - MQTTcam/1
            - MQTT/cam2
-     - if one or more NCS sticks are plugged in one AI thread per NCS stick will be created along with one CPU AI thread unless the -nt 0 option is given to suppress the dnn AI thread (default for Raspberry Pi)
+     - if one or more NCS sticks are plugged in one AI thread per NCS stick will be created along with one CPU AI thread unless the -nt 0 option is given to suppress the dnn AI thread (should always be given for Raspberry Pi).  A seperate thread is created to handle the MQTTcam/N messages.  Thus there always is a main thread and a thread for the mundane MQTT messages, along with one thread per Onvif camera and rtsp stream and a thread for the MQTT cameras if necessary -- in this case 2+5+1=8 threads will be running.
      - **Important!** no blank lines or blank line at the end of the URL files or a null URL camera will be created that causes errors while running.
            
 
