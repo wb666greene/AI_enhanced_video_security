@@ -25,6 +25,21 @@ This is a heavily threaded, stand alone Python program that has been developed o
       - **Linux/Raspbian:**
         - sudo apt-get install mosquitto mosquitto-dev mosquitto-clients
       - **Windows:**
+        - easy way: http://www.steves-internet-guide.com/install-mosquitto-broker/
+        - official way, download it here: https://mosquitto.org/download/
+
+# You will most likely want:
+Some way to enable/disable the system and send alerts when the AI detects a person in the camera's view.  
+
+The easiest way is to use the sample node-red "flow" **FTP_image_to_AI_via_MQTT.json** that I've included to get motion detected images from your Security DVR, systems like Zoneminder, Motioneye, motion etc., or your directly netcams via FTP and let them handle the scheduling.  
+
+The **AI_mt.py_Controller-Viewer.json** provides an example of how I end notifications and control the schedule (MQTT messages from a couple of PiZero-W systems that detect our presence or absense via BLE Radius Dot Beacons attaced to key fobs) and monitors the state of the door locks.  Giving three system "modes" Idle: when a door is unlocked (ignore all detections);  Audio: all doors locked and a BLE beacon is in range (announce detections using Espeak-ng speech synthesizer); and Notify: all doors locked and no BLE beacons in range (send SMS alert and Email with jpeg attachment of the detection image).
+
+
+## Usage Notes:
+
+
+
 
 # If using NCS:
   - Install NCS v1 SDK:
