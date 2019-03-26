@@ -9,7 +9,7 @@ It supports inputs from "Onvif" cameras using HTTP "jpeg snapshot" URLs, rtsp st
 
 This is a heavily threaded, stand alone Python program that has been developed on Ubuntu-Mate 16.04 and tested on: Raspberry Pi3B Raspbian "stretch", Ubuntu-Mate 18.04, Ubuntu 16.04 Virtualbox VM (CPU AI only, VM NCS function is not reliable), Windows 7, and Windows 10.  It should still run with Python 2.7 (only tested on Pi3B+) but Python 3.5.2 or newer is recommended.
 
-**Note:** There is no NCS support on Windows, but the OpenCV dnn module running on a decent i3 (4025U) gets about the same frame rate as does the NCS running on a Pi3B+, ~6 fps.  The dnn module on the Pi3B+ is too slow to be of much use at ~0.6 fps.
+**Note:** There is no NCS support on Windows, but the OpenCV dnn module running on a decent i3 (4025U) gets about the same frame rate as does the NCS running on a Pi3B+, ~6 fps.  The dnn module on the Pi3B+ is too slow to be of much use at ~0.6 fps.  I do not run Windows or have a Windows machine.  My Windows comments are notes I took installing on friend's machines.
 
 # Requirements:
   - Python 3.5.2 or newer, 2.7 should work if you can find all the modules.
@@ -20,6 +20,11 @@ This is a heavily threaded, stand alone Python program that has been developed o
     - imutils
     - pillow
     - opencv-contrib-python
+  - MQTT broker
+    - runing locally is fine, actually prefered in many ways.
+      - **Linux/Raspbian:**
+        - sudo apt-get install mosquitto mosquitto-dev mosquitto-clients
+      - **Windows:**
 
 # If using NCS:
   - Install NCS v1 SDK:
@@ -60,9 +65,11 @@ This is a heavily threaded, stand alone Python program that has been developed o
   
 
 # Windows notes:
-  - Download python3 ( https://www.python.org/downloads/windows/ ) and install  (includes Idle & pip).
+  - Download python3 ( https://www.python.org/downloads/windows/ ) and install (includes Idle & pip).
   - open a command window and run:
     - pip install opencv-contrib-python requests pillow imutils paho-mqtt
+    - For OpenCV on Windows7 vc_redist.X64 and vc_redist.x86 may need to be installed, api-ms-win-downlevel-shlwapi-l1-1-0.dll may be missing, we found it here https://www.dll-files.com/
+
 
 
   
