@@ -59,5 +59,10 @@ This is a heavily threaded, stand alone Python program that has been developed o
            `NCS device working.`
   
 
+# Windows notes:
+  - Download python3 ( https://www.python.org/downloads/windows/ ) and install  (includes Idle & pip).
+  - open a command window and run:
+    - pip install opencv-contrib-python requests pillow imutils paho-mqtt
+
 
   
