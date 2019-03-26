@@ -47,13 +47,16 @@ The **AI_mt.py_Controller-Viewer.json** provides an example of how I end notific
       - ./httpCams containg:
       
          `http://192.168.2.219:85/images/snapshot.jpg`
+         
          `http://192.168.2.53/webcapture.jpg?command=snap&channel=1&user=admin&password=tlJwpbo6`
       - will create two Onvif snapshots cameras, Cam0 & Cam1
         
       - ./rtspStreams containing: 
       
         `rtsp://192.168.2.124:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream`
+        
         `rtsp://admin:xyzzy@192.168.2.164:554/cam/realmonitor?channel=4&subtype=0`
+        
         `rtsp://admin:xyzzy@192.168.2.164:554/cam/realmonitor?channel=11&subtype=0`
        - will create three rtsp stream cameras, Cam2, Cam3, & Cam4
         
