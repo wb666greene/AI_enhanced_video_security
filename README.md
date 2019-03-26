@@ -52,7 +52,9 @@ This is a heavily threaded, stand alone Python program that has been developed o
       - make run
         - should return:
            `Hello NCS! Device opened normally.
+           
            `Goodbye NCS! Device closed normally.`
+           
            `NCS device working.`
   
 
