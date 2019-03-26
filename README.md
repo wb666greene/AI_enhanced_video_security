@@ -51,6 +51,7 @@ This is a heavily threaded, stand alone Python program that has been developed o
       - cd ~/ncs/ncappzoo/apps/hello_ncs_py
       - make run
         - should return:
+        
            `Hello NCS! Device opened normally.
            
            `Goodbye NCS! Device closed normally.`
