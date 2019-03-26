@@ -1,0 +1,788 @@
+[
+    {
+        "id": "6925873a.fe0858",
+        "type": "tab",
+        "label": "FTP_image_to_AI_via_MQTT",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3a795559.f049ca",
+        "type": "ftp-server",
+        "z": "6925873a.fe0858",
+        "name": "",
+        "port": "31415",
+        "x": 130,
+        "y": 385,
+        "wires": [
+            [
+                "8eaf5af5.7bd068",
+                "86b871c0.dac05"
+            ]
+        ]
+    },
+    {
+        "id": "8eaf5af5.7bd068",
+        "type": "switch",
+        "z": "6925873a.fe0858",
+        "name": "channel mapper",
+        "property": "msg.topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "_ch1_",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "_ch2_",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "_ch3_",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "_ch4_",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ch5",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ch6",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ch7",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ch8",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ch9",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ch10",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ch11",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ch12",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ch13",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ch14",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ch15",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ch16",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": true,
+        "outputs": 17,
+        "x": 565,
+        "y": 385,
+        "wires": [
+            [
+                "17df33e4.8dfd4c"
+            ],
+            [
+                "992b3c3.414f1c"
+            ],
+            [
+                "6f4a01f2.4be8a"
+            ],
+            [
+                "516d51.bf9b62b"
+            ],
+            [
+                "272f9291.4263de"
+            ],
+            [
+                "1160fc6d.2abf34"
+            ],
+            [
+                "3afac41a.3068bc"
+            ],
+            [
+                "80d3f957.12d5c8"
+            ],
+            [
+                "ee2724a8.2e6278"
+            ],
+            [
+                "8c3c31c6.057ac"
+            ],
+            [
+                "e9092d16.3b097"
+            ],
+            [
+                "f616c526.51bfd8"
+            ],
+            [
+                "cece7da3.d465c"
+            ],
+            [
+                "750aec9c.2f8594"
+            ],
+            [
+                "c58b32fc.da714"
+            ],
+            [
+                "7a5ed396.444c2c"
+            ],
+            [
+                "b943680d.7469b8"
+            ]
+        ]
+    },
+    {
+        "id": "17df33e4.8dfd4c",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 105,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "992b3c3.414f1c",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 140,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "6f4a01f2.4be8a",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/2",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 175,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "516d51.bf9b62b",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam3",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/3",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 210,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "272f9291.4263de",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam4",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/4",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 245,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "1160fc6d.2abf34",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam5",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/5",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 280,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "3afac41a.3068bc",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam6",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/6",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 315,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "80d3f957.12d5c8",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam7",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/7",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 350,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "ee2724a8.2e6278",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam8",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/8",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 385,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "8c3c31c6.057ac",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam9",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/9",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 420,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "e9092d16.3b097",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam10",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/10",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 455,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "f616c526.51bfd8",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam11",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/11",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 490,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "cece7da3.d465c",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam12",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/12",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 525,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "750aec9c.2f8594",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam13",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/13",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 560,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "c58b32fc.da714",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam14",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/14",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 595,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "7a5ed396.444c2c",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "cam15",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/15",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 630,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "b943680d.7469b8",
+        "type": "change",
+        "z": "6925873a.fe0858",
+        "name": "default",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.topic",
+                "pt": "msg",
+                "to": "MQTTcam/0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 805,
+        "y": 665,
+        "wires": [
+            [
+                "163c0a97.a4a865"
+            ]
+        ]
+    },
+    {
+        "id": "163c0a97.a4a865",
+        "type": "mqtt out",
+        "z": "6925873a.fe0858",
+        "name": "MQTTcam/N to AI system",
+        "topic": "",
+        "qos": "2",
+        "retain": "false",
+        "broker": "70fa8cd9.0a1224",
+        "x": 1120,
+        "y": 385,
+        "wires": []
+    },
+    {
+        "id": "3d035bb2.fe86a4",
+        "type": "gate",
+        "z": "6925873a.fe0858",
+        "name": "Discard If Idle",
+        "controlTopic": "Alarm/MODE",
+        "defaultState": "open",
+        "openCmd": "Notify",
+        "closeCmd": "Idle",
+        "toggleCmd": "toggle",
+        "defaultCmd": "Audio",
+        "persist": false,
+        "x": 375,
+        "y": 450,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "134a2c51.0426d4",
+        "type": "mqtt in",
+        "z": "6925873a.fe0858",
+        "name": "Get Alarm/MODE",
+        "topic": "Alarm/MODE",
+        "qos": "2",
+        "broker": "70fa8cd9.0a1224",
+        "x": 150,
+        "y": 450,
+        "wires": [
+            [
+                "3d035bb2.fe86a4"
+            ]
+        ]
+    },
+    {
+        "id": "1a87b4a4.d3a78b",
+        "type": "mqtt in",
+        "z": "6925873a.fe0858",
+        "name": "",
+        "topic": "MQTTcam/#",
+        "qos": "2",
+        "broker": "70fa8cd9.0a1224",
+        "x": 1090,
+        "y": 500,
+        "wires": [
+            [
+                "dee5fbfb.68f618"
+            ]
+        ]
+    },
+    {
+        "id": "dee5fbfb.68f618",
+        "type": "debug",
+        "z": "6925873a.fe0858",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1260,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "86b871c0.dac05",
+        "type": "debug",
+        "z": "6925873a.fe0858",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 300,
+        "y": 325,
+        "wires": []
+    },
+    {
+        "id": "587d4f96.0048",
+        "type": "comment",
+        "z": "6925873a.fe0858",
+        "name": "MQTTcam/#",
+        "info": "## Debug monitor.\nShow what is being sent to the AI from the ftp server.\n\nGenerally delete this once setup is complete.",
+        "x": 1090,
+        "y": 465,
+        "wires": []
+    },
+    {
+        "id": "6c82aef4.213ca",
+        "type": "comment",
+        "z": "6925873a.fe0858",
+        "name": "Channel Mapper",
+        "info": " Uses the ftp server file name (from the DVR or camera) to map a particular camera to an MQTT \"virtual camera\" MQTT topic.\n\n",
+        "x": 565,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b60ae029.31afa",
+        "type": "comment",
+        "z": "6925873a.fe0858",
+        "name": "Discard If Idle",
+        "info": "Not wired, for initial testing/setup.\n\nRemove the wire from the ftp server to the channel mapper\n\nWire ftp server to input of Discard gate, and its output to the channel mapper.\n\nThen the dasboard AI Mode control will enable/disable sending images from the camera to the AI via the ftp server.\n",
+        "x": 365,
+        "y": 415,
+        "wires": []
+    },
+    {
+        "id": "7f4bfba5.e64024",
+        "type": "comment",
+        "z": "6925873a.fe0858",
+        "name": "camN",
+        "info": "These should not be changed as they are the MQTT topics the Python AI code is looking for to recieve images on the \"virtual cameras\"\n\nThe channel mapper and the number of these \"switch\" should match or be greater than number of MQTT cameras specified on the Python command line with -Nmqtt\n\nThe virtual cameras must be mapped sequentially from 0 to Nmqtt-1\n\nMy Lorex DVR has 16 cameras so I made 16 virtual cameras.\n\nThe 17th is to map a MotioneyeOS \"network camera\" to cam0 to test using ftp straight from the camera.\n\nMost netcams can directly ftp their motion detected image.\n\nYou could make one ftp server node for each netcam uisng a seperate port for each netcam and eliminate the channel mapper,  still need to switch the msg.topic from the filename from the netcam to the MQTTcam/N topic the Python AI expects.\n",
+        "x": 805,
+        "y": 70,
+        "wires": []
+    },
+    {
+        "id": "70fa8cd9.0a1224",
+        "type": "mqtt-broker",
+        "z": null,
+        "name": "localhost:1883",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": ""
+    }
+]
