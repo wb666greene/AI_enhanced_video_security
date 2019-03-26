@@ -36,7 +36,21 @@ The easiest way is to use the sample node-red "flow" **FTP_image_to_AI_via_MQTT.
 The **AI_mt.py_Controller-Viewer.json** provides an example of how I end notifications and control the schedule (MQTT messages from a couple of PiZero-W systems that detect our presence or absense via BLE Radius Dot Beacons attaced to key fobs) and monitors the state of the door locks.  Giving three system "modes" Idle: when a door is unlocked (ignore all detections);  Audio: all doors locked and a BLE beacon is in range (announce detections using Espeak-ng speech synthesizer); and Notify: all doors locked and no BLE beacons in range (send SMS alert and Email with jpeg attachment of the detection image).
 
 
-## Usage Notes:
+# Usage Notes:
+
+"logical cameras" are assigned one thread per physical camera for Onvif snapshot or rtsp stream cameras, numbered from zero in sequence Onvif, rtsp, MQTT (one thread handles all MQTT cameras).  The camera URLs are specified on the command line with options:
+  - for Onvif (http jpeg): -cam or --cameraURLs  PathTo/OnvifCameraURLsFile
+  - for rtsp streams: -rtsp or --rtspURLs  PathTo/rtspURLsFile
+  - for MQTT (ftp) cameras Nmqtt or --NmqttCams  N, where N is the number of MQTT topics subscribed to as MQTTcam/0 ... MQTTcam/N-1 for each of the N cameras sending images via ftp using the node-red ftp server flow.
+  - **for example:** command line
+    - **python3 AI_mt.py -cam ./httpCams -rtsp ./rtspStreams -Nmqtt 4** and files:
+      - ./httpCams containg:
+        - `http://192.168.2.219:85/images/snapshot.jpg'
+        - `http://192.168.2.53/webcapture.jpg?command=snap&channel=1&user=admin&password=tlJwpbo6`
+        will create two Onvif snapshots cameras, Cam0 & Cam1
+      - ./rtspStreams containing: 
+        - `rtsp://192.168.2.124:554/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream`
+        
 
 
 
