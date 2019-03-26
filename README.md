@@ -43,12 +43,12 @@ The **AI_mt.py_Controller-Viewer.json** provides an example of how I end notific
   - for rtsp streams: -rtsp or --rtspURLs  PathTo/rtspURLsFile
   - for MQTT (ftp) cameras Nmqtt or --NmqttCams  N, where N is the number of MQTT topics subscribed to as MQTTcam/0 ... MQTTcam/N-1 for each of the N cameras sending images via ftp using the node-red ftp server flow.
   - **for example:** command line
-    - **python3 AI_mt.py -cam ./httpCams -rtsp ./rtspStreams -Nmqtt 3** and files:
+    - **python3 AI_mt.py -rtsp ./rtspStreams -Nmqtt 3 -cam ./httpCams** and files:
       - ./httpCams containg:
       
-         `http://192.168.2.219:85/images/snapshot.jpg
+         `http://192.168.2.219:85/images/snapshot.jpg`
          
-         http://192.168.2.53/webcapture.jpg?command=snap&channel=1&user=admin&password=tlJwpbo6`
+         `http://192.168.2.53/webcapture.jpg?command=snap&channel=1&user=admin&password=tlJwpbo6`
       - will create two Onvif snapshots cameras, Cam0 & Cam1
         
       - ./rtspStreams containing: 
@@ -65,6 +65,7 @@ The **AI_mt.py_Controller-Viewer.json** provides an example of how I end notific
            - MQTTcam/0
            - MQTTcam/1
            - MQTT/cam2
+     - if one or more NCS sticks are plugged in one AI thread per NCS stick will be created along with one CPU AI thread unless the -nt 0 option is given to suppress the dnn AI thread (default for Raspberry Pi)
      - **Important!** no blank lines or blank line at the end of the URL files or a null URL camera will be created that causes errors while running.
            
 
