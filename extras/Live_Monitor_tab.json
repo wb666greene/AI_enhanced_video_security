@@ -1,0 +1,249 @@
+[
+    {
+        "id": "9d756756.eba958",
+        "type": "tab",
+        "label": "Live_Monitor",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "bee0b483.491a08",
+        "type": "mqtt in",
+        "z": "9d756756.eba958",
+        "name": "DetectionImageBuffer",
+        "topic": "DetectionImageBuffer/#",
+        "qos": "2",
+        "broker": "70fa8cd9.0a1224",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "d1d47555.33aa28",
+                "3906c033.5110c"
+            ]
+        ]
+    },
+    {
+        "id": "6ee11e65.2508c",
+        "type": "image",
+        "z": "9d756756.eba958",
+        "name": "Cam0",
+        "width": "640",
+        "x": 355,
+        "y": 65,
+        "wires": []
+    },
+    {
+        "id": "70e807a9.e51c48",
+        "type": "comment",
+        "z": "9d756756.eba958",
+        "name": "Detections Only unless started with -send option",
+        "info": "",
+        "x": 230,
+        "y": 25,
+        "wires": []
+    },
+    {
+        "id": "d1d47555.33aa28",
+        "type": "switch",
+        "z": "9d756756.eba958",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "Cam0",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "Cam1",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "Cam2",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "Cam3",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "Cam4",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "Cam5",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "Cam6",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "Cam7",
+                "vt": "str"
+            },
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 9,
+        "x": 130,
+        "y": 190,
+        "wires": [
+            [
+                "6ee11e65.2508c"
+            ],
+            [
+                "342037db.30a4f8"
+            ],
+            [
+                "8b1a8fb9.5631e"
+            ],
+            [
+                "b226ea88.19db48"
+            ],
+            [
+                "f4352479.09d358"
+            ],
+            [
+                "ddcdd4ed.db7298"
+            ],
+            [
+                "5f240535.a57cec"
+            ],
+            [
+                "c05abc85.a5fd7"
+            ],
+            []
+        ],
+        "outputLabels": [
+            "driveway",
+            "patio",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "id": "342037db.30a4f8",
+        "type": "image",
+        "z": "9d756756.eba958",
+        "name": "Cam1",
+        "width": "640",
+        "x": 1005,
+        "y": 65,
+        "wires": []
+    },
+    {
+        "id": "8b1a8fb9.5631e",
+        "type": "image",
+        "z": "9d756756.eba958",
+        "name": "Cam2",
+        "width": "640",
+        "x": 355,
+        "y": 475,
+        "wires": []
+    },
+    {
+        "id": "b226ea88.19db48",
+        "type": "image",
+        "z": "9d756756.eba958",
+        "name": "Cam3",
+        "width": "640",
+        "x": 1005,
+        "y": 475,
+        "wires": []
+    },
+    {
+        "id": "3906c033.5110c",
+        "type": "debug",
+        "z": "9d756756.eba958",
+        "name": "DetectBuffer",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 555,
+        "y": 35,
+        "wires": []
+    },
+    {
+        "id": "f4352479.09d358",
+        "type": "image",
+        "z": "9d756756.eba958",
+        "name": "Cam4",
+        "width": "640",
+        "x": 345,
+        "y": 915,
+        "wires": []
+    },
+    {
+        "id": "5f240535.a57cec",
+        "type": "image",
+        "z": "9d756756.eba958",
+        "name": "Cam6",
+        "width": "640",
+        "x": 340,
+        "y": 1335,
+        "wires": []
+    },
+    {
+        "id": "ddcdd4ed.db7298",
+        "type": "image",
+        "z": "9d756756.eba958",
+        "name": "Cam5",
+        "width": "640",
+        "x": 990,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "c05abc85.a5fd7",
+        "type": "image",
+        "z": "9d756756.eba958",
+        "name": "Cam7",
+        "width": "640",
+        "x": 995,
+        "y": 1330,
+        "wires": []
+    },
+    {
+        "id": "70fa8cd9.0a1224",
+        "type": "mqtt-broker",
+        "z": null,
+        "name": "localhost:1883",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": ""
+    }
+]
