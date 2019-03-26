@@ -47,7 +47,6 @@ The **AI_mt.py_Controller-Viewer.json** provides an example of how I end notific
       - ./httpCams containg:
       
          `http://192.168.2.219:85/images/snapshot.jpg`
-         
          `http://192.168.2.53/webcapture.jpg?command=snap&channel=1&user=admin&password=tlJwpbo6`
       - will create two Onvif snapshots cameras, Cam0 & Cam1
         
