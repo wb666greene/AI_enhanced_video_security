@@ -8,7 +8,7 @@
 
 import argparse
 import os
-import mosquitto
+import paho.mqtt.client as mqtt
 import glob
 import time
 
@@ -24,7 +24,7 @@ ap.add_argument( "-i",  "--pathToImages",  required=True,  help="path to folder 
 args = vars(ap.parse_args())
 pathToImages = args['pathToImages']
 
-client = mosquitto.Mosquitto()
+client = mqtt.Client()
 
 # Just edit the ip address and port number to fit your setup for
 # the computer running the Centralized DNN analyzer
