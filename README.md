@@ -31,12 +31,12 @@ This is a heavily threaded, stand alone Python program that has been developed o
 # You will most likely want:
 Some way to enable/disable the system and send alerts when the AI detects a person in the camera's view.  
 
-The easiest way is to use the sample node-red "flow" **FTP_image_to_AI_via_MQTT.json** that I've included to get motion detected images from your Security DVR, systems like Zoneminder, Motioneye, motion etc., or your directly netcams via FTP and let them handle the scheduling.  
+The easiest way is to use the sample node-red "flow" **FTP_image_to_AI_via_MQTT.json** that I've included to get motion detected images from your Security DVR, systems like Zoneminder, Motioneye, motion etc., or your stand-alone netcams directly via FTP and let them handle the scheduling.  
 
-The **AI_mt.py_Controller-Viewer.json** provides an example of how I end notifications and control the schedule (MQTT messages from a couple of PiZero-W systems that detect our presence or absense via BLE Radius Dot Beacons attaced to key fobs) and monitors the state of the door locks.  Giving three system "modes" Idle: when a door is unlocked (ignore all detections);  Audio: all doors locked and a BLE beacon is in range (announce detections using Espeak-ng speech synthesizer); and Notify: all doors locked and no BLE beacons in range (send SMS alert and Email with jpeg attachment of the detection image).
+The **AI_mt.py_Controller-Viewer.json** provides an example of how I send notifications and control the schedule (MQTT messages from a couple of PiZero-W systems that detect our presence or absense via BLE Radius Dot Beacons attaced to key fobs) and monitors the state of the door locks.  Giving three system "modes" Idle: when a door is unlocked (ignore all detections);  Audio: all doors locked and a BLE beacon is in range (announce detections using Espeak-ng speech synthesizer); and Notify: all doors locked and no BLE beacons in range (send SMS alert and Email with jpeg attachment of the detection image).
 
 ## Install node-red and learn about it here:
-   https://nodered.org/  I think its ideal for this purpose and pretty easy to learn and modify the "flows" (programs).
+   https://nodered.org/  I think its ideal for this purpose and pretty easy to learn and modify the "flows" (programs) for your use case.
 ##   Questions about my node-red sample flows should go here: 
    https://discourse.nodered.org/t/final-version-of-security-cameras-with-ai-person-detection/9510/2 
 ## Python code: 
@@ -126,5 +126,17 @@ The **AI_mt.py_Controller-Viewer.json** provides an example of how I end notific
     - For OpenCV on Windows7 vc_redist.X64 and vc_redist.x86 may need to be installed, api-ms-win-downlevel-shlwapi-l1-1-0.dll may be missing, we found it here https://www.dll-files.com/
 
 
+
+## Some performance numbers:
+   - **Pi3B+:**        
+     - CPU AI is too slow to be useful ~0.6 fps,  start program with option:  - nt 0
+     -  Python 2.7:
+        - 5 onvif cameras 1 NCS gets ~6.5 fps, 2 NCS doesn't run reliably, NCS timeout errors, might be power suppy issue.  
+     - Python 3.5  
+       - 5 onvif cameras 1 NCS gets ~6.6 fps, same erratic results with two NCS sticks, but short runs do ~11.7 fps
+       - 5 rtsp streams gets ~4.5 fps, 2 NCS gets ~6.2 fps  I don't think the Pi is a good choice for rtsp streams.           
+   - **i3 4025U:**
+     -
+     - 
 
   
