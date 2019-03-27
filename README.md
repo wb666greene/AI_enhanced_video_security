@@ -3,9 +3,9 @@ Python MobileNet-SSD AI using Movidius NCS and/or CPU OpenCV dnn module AI with 
 
 This is the evolution of, and essentially the end of, this initial project:
 https://github.com/wb666greene/SecurityDVR_AI_addon
-Further developement is moving to OpenVINO (for NCS2 support) and or Google's new Coral TPU USB accelerator.
+Further developement is moving to OpenVINO (for NCS2 support) and/or Google's new Coral TPU USB accelerator.
 
-It supports inputs from "Onvif" cameras using HTTP "jpeg snapshot" URLs, rtsp stream URLs, or jpeg images sent via MQTT messages.
+This code supports inputs from "Onvif" cameras using HTTP "jpeg snapshot" URLs, rtsp stream URLs, or jpeg images sent via MQTT messages.
 
 This is a heavily threaded, stand alone Python program that has been developed on Ubuntu-Mate 16.04 and tested on: Raspberry Pi3B Raspbian "stretch", Ubuntu-Mate 18.04, Ubuntu 16.04 Virtualbox VM (CPU AI only, VM NCS function is not reliable), Windows 7, and Windows 10.  It should still run with Python 2.7 (only tested on Pi3B+) but Python 3.5.2 or newer is recommended.
 
@@ -34,6 +34,13 @@ Some way to enable/disable the system and send alerts when the AI detects a pers
 The easiest way is to use the sample node-red "flow" **FTP_image_to_AI_via_MQTT.json** that I've included to get motion detected images from your Security DVR, systems like Zoneminder, Motioneye, motion etc., or your directly netcams via FTP and let them handle the scheduling.  
 
 The **AI_mt.py_Controller-Viewer.json** provides an example of how I end notifications and control the schedule (MQTT messages from a couple of PiZero-W systems that detect our presence or absense via BLE Radius Dot Beacons attaced to key fobs) and monitors the state of the door locks.  Giving three system "modes" Idle: when a door is unlocked (ignore all detections);  Audio: all doors locked and a BLE beacon is in range (announce detections using Espeak-ng speech synthesizer); and Notify: all doors locked and no BLE beacons in range (send SMS alert and Email with jpeg attachment of the detection image).
+
+## Install node-red and learn about it here:
+   https://nodered.org/  I think its ideal for this purpose and pretty easy to learn and modify the "flows" (programs).
+##   Questions about my node-red sample flows should go here: 
+   https://discourse.nodered.org/t/final-version-of-security-cameras-with-ai-person-detection/9510/2 
+## Python code: 
+   Issues/questions or installation and usasge questions, please raise an issue here.
 
 
 # Usage Notes:
