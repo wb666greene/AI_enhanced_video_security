@@ -161,7 +161,7 @@ The **AI_mt.py_Controller-Viewer.json** provides an example of how I send notifi
         - 5 rtsp, CPU AI + 2 NCS gets ~24.4 fps, likely camera limited, as each stream is set to 5 fps.
       - Ubuntu-Mate18.04
         - 5 rtsp, CPU AI + 1 NCS ~19.5 fps.
-     - **i7-6700K:** 4 GHz quad core, my desktop development system, while "everything" else I do is running.
+    - **i7-6700K:** 4 GHz quad core, my desktop development system, while "everything" else I do is running.
        - Ubuntu-Mate16.04  
         - 2 Onvif, 5 rtsp, 1 mqtt (ftp)  gets ~29.4 fps wtih one NCS and one CPU AI thread.
         
