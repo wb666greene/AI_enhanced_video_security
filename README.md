@@ -78,6 +78,44 @@ The **AI_mt.py_Controller-Viewer.json** provides an example of how I send notifi
      - **Important!** no blank lines or blank line at the end of the URL files or a null URL camera will be created that causes errors while running.
            
 
+# Some performance numbers:
+   - **Pi3B+:**   CPU AI is too slow to be useful ~0.6 fps,  start program with option:  - nt 0
+     -  Python 2.7:
+        - 5 Onvif cameras 1 NCS gets ~6.5 fps, 2 NCS doesn't run reliably, NCS timeout errors, power suppy issue?  
+     - Python 3.5  
+       - 5 Onvif cameras 1 NCS gets ~6.6 fps, same erratic results with two NCS sticks, but short runs do ~11.7 fps
+       - 5 rtsp streams gets ~4.5 fps, 2 NCS gets ~6.2 fps  I don't think the Pi is a very good for rtsp streams.           
+   - **i3 4025U:**
+     - Windows7:
+       - 5 Onvif cameras gets ~6.2 fps.
+       - 5 rtsp streams gets ~5.2fps.
+     - Windows10
+       - 5 Onvif cameras gets ~6.1 fps.
+       - 5 rtsp streams gets ~5.3 fps.
+     - Ubuntu16.04:   same hardware, CPU AI only, No NCS installed to compare with Windows (dual boot)
+       - 5 Onvif cameras gets ~8.4 fps.
+       - 5 rtsp streams ~7.4 fps.
+    - **i5 M540:**    old CPU without AVX, AVX2,  lack of USB3 holds back NCS performance
+      - Ubuntu-Mate16.04: 
+        - 5 Onvif, CPU AI does poorly ~3.9 fps, better than Pi3 but worse than i3 4025U.
+        - 5 Onvif, 1 NCS, no CPU AI gets ~8.8 fps, 2 NCS ~17.0 fps, 1 NCS + 1 CPU AI ~12.0 fps.
+        - 5 rtsp, 1 NCS, no CPU AI ~8.8 fps.
+    - **i5 4200U:**
+      - Ubuntu-Mate16.04 
+        - 5 rtsp, CPU AI ~9.7 fps.
+        - 5 rtsp, CPU AI + 1 NCS ~18.1 fps.
+    - **i7 4500U:**    
+      - Ubuntu-Mate16.04 
+        - 5 rtsp, CPU AI gets ~10.6 fps
+        - 5 rtsp, 1 NCS, no CPU AI gets ~10.7 fps
+        - 5 rtsp, CPU AI + 1 NCS gets ~20.1 fps
+        - 5 rtsp, CPU AI + 2 NCS gets ~24.4 fps, likely camera limited, as each stream is set to 5 fps.
+      - Ubuntu-Mate18.04
+        - 5 rtsp, CPU AI + 1 NCS ~19.5 fps.
+    - **i7-6700K:** 4 GHz quad core, my development system, while "everything else" I do is running.
+      - Ubuntu-Mate16.04  
+        - 2 Onvif, 5 rtsp, 1 mqtt (ftp)  gets ~29.4 fps wtih one NCS and one CPU AI thread.
+        
 
 
 
@@ -127,42 +165,4 @@ The **AI_mt.py_Controller-Viewer.json** provides an example of how I send notifi
 
 
 
-# Some performance numbers:
-   - **Pi3B+:**   CPU AI is too slow to be useful ~0.6 fps,  start program with option:  - nt 0
-     -  Python 2.7:
-        - 5 Onvif cameras 1 NCS gets ~6.5 fps, 2 NCS doesn't run reliably, NCS timeout errors, power suppy issue?  
-     - Python 3.5  
-       - 5 Onvif cameras 1 NCS gets ~6.6 fps, same erratic results with two NCS sticks, but short runs do ~11.7 fps
-       - 5 rtsp streams gets ~4.5 fps, 2 NCS gets ~6.2 fps  I don't think the Pi is a very good for rtsp streams.           
-   - **i3 4025U:**
-     - Windows7:
-       - 5 Onvif cameras gets ~6.2 fps.
-       - 5 rtsp streams gets ~5.2fps.
-     - Windows10
-       - 5 Onvif cameras gets ~6.1 fps.
-       - 5 rtsp streams gets ~5.3 fps.
-     - Ubuntu16.04:   same hardware, CPU AI only, No NCS installed to compare with Windows (dual boot)
-       - 5 Onvif cameras gets ~8.4 fps.
-       - 5 rtsp streams ~7.4 fps.
-    - **i5 M540:**    old CPU without AVX, AVX2,  lack of USB3 holds back NCS performance
-      - Ubuntu-Mate16.04: 
-        - 5 Onvif, CPU AI does poorly ~3.9 fps, better than Pi3 but worse than i3 4025U.
-        - 5 Onvif, 1 NCS, no CPU AI gets ~8.8 fps, 2 NCS ~17.0 fps, 1 NCS + 1 CPU AI ~12.0 fps.
-        - 5 rtsp, 1 NCS, no CPU AI ~8.8 fps.
-    - **i5 4200U:**
-      - Ubuntu-Mate16.04 
-        - 5 rtsp, CPU AI ~9.7 fps.
-        - 5 rtsp, CPU AI + 1 NCS ~18.1 fps.
-    - **i7 4500U:**    
-      - Ubuntu-Mate16.04 
-        - 5 rtsp, CPU AI gets ~10.6 fps
-        - 5 rtsp, 1 NCS, no CPU AI gets ~10.7 fps
-        - 5 rtsp, CPU AI + 1 NCS gets ~20.1 fps
-        - 5 rtsp, CPU AI + 2 NCS gets ~24.4 fps, likely camera limited, as each stream is set to 5 fps.
-      - Ubuntu-Mate18.04
-        - 5 rtsp, CPU AI + 1 NCS ~19.5 fps.
-    - **i7-6700K:** 4 GHz quad core, my development system, while "everything else" I do is running.
-      - Ubuntu-Mate16.04  
-        - 2 Onvif, 5 rtsp, 1 mqtt (ftp)  gets ~29.4 fps wtih one NCS and one CPU AI thread.
-        
   
