@@ -39,6 +39,8 @@ The **AI_mt.py_Controller-Viewer.json** provides an example of how I send notifi
    https://nodered.org/  I think its ideal for this purpose and pretty easy to learn and modify the "flows" (programs) for your use case.
 ##   Questions about my node-red sample flows should go here: 
    https://discourse.nodered.org/t/final-version-of-security-cameras-with-ai-person-detection/9510/2 
+   So we can get answers and imputs from the real node-red experts.
+   
 ## Python code: 
    Issues/questions or installation and usasge questions, please raise an issue here.
 
