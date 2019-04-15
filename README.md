@@ -86,6 +86,7 @@ The **AI_mt.py_Controller-Viewer.json** provides an example of how I send notifi
        - 5 Onvif cameras 1 NCS gets ~6.5 fps, 2 NCS doesn't run reliably, NCS timeout errors, power suppy issue?  
      - Python 3.5  
        - 5 Onvif cameras 1 NCS gets ~6.6 fps, same erratic results with two NCS sticks, but short runs do ~11.7 fps
+           with a 3.5A powered hub two NCS sticks got ~11.6 fps for a 15 minute run.
        - 5 rtsp streams gets ~4.5 fps, 2 NCS gets ~6.2 fps  I don't think the Pi is a very good for rtsp streams.           
    - **i3 4025U:**
      - Windows7:
