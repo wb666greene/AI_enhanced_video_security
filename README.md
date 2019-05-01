@@ -5,6 +5,20 @@ This is the evolution of, and essentially the end of, this initial project:
 https://github.com/wb666greene/SecurityDVR_AI_addon
 Further developement is moving to OpenVINO (for NCS2 support) and/or Google's new Coral TPU USB accelerator.
 
+## **New**
+In the extras folder is AI_OVmt.py, a simple modification to turn a CPU AI thread into an OpenVINO NCS/NCS2 thread. Some performance tests:
+  - Using 5 Onvif snaphot netcams.
+    Pi3B+:
+     - NCS v1 SDK ~6.5 fps
+     - 2 NCS v1 SDK ~11.6 fps
+     - NCS OpenVINO ~5.9 fps
+     - 2 NCS OpenVINO ~9.9 fps
+     - NCS2 OpenVINO ~8.3 fps
+  - Odroid XU-4:
+     - NCS OpenVINO ~8.5 fps
+     - 2 NCS OpenVINO ~15.9 fps
+     - NCS2 OpenVINO ~15.5 fps
+
 This code supports inputs from "Onvif" cameras using HTTP "jpeg snapshot" URLs, rtsp stream URLs, or jpeg images sent via MQTT messages.
 
 This is a heavily threaded, stand alone Python program that has been developed on Ubuntu-Mate 16.04 and tested on: Raspberry Pi3B Raspbian "stretch", Ubuntu-Mate 18.04, Ubuntu 16.04 Virtualbox VM (CPU AI only, VM NCS function is not reliable), Windows 7, and Windows 10.  It should still run with Python 2.7 (only tested on Pi3B+) but Python 3.5.2 or newer is recommended.
