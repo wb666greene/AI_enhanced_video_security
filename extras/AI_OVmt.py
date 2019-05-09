@@ -17,7 +17,7 @@
 ## Odroid XU-4:
 ##      NCS OpenVINO ~8.5 fps
 ##      2 NCS OpenVINO ~15.9 fps
-##      NCS2 OpenVINO ~15.5 fps## Mixing NCS2 and NCS gets ~8.9 fps barely better than the NCS2 alone and worse than using 2 NCS.  Something weird here.
+##      NCS2 OpenVINO ~15.5 fps## Mixing NCS2 and NCS gets ~8.9 fps barely better than the NCS alone and worse than using 2 NCS.  Something weird here.
 ##
 ## i5 4200U:
 ##      1 NCS 0 CPU ~10.4 fps
