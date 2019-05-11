@@ -13,13 +13,13 @@ This is a heavily threaded, stand alone Python program that has been developed o
 ### **New**
 In the extras folder is AI_OVmt.py, a simple modification to turn a CPU AI thread into an OpenVINO NCS/NCS2 thread. Some performance tests:
   - Using 5 Onvif snaphot netcams.
-    Pi3B+:
+   - Pi3B+:
      - NCS v1 SDK ~6.5 fps
      - 2 NCS v1 SDK ~11.6 fps
      - NCS OpenVINO ~5.9 fps
      - 2 NCS OpenVINO ~9.9 fps
      - NCS2 OpenVINO ~8.3 fps
-    Odroid XU-4:
+   - Odroid XU-4:
      - NCS OpenVINO ~8.5 fps
      - 2 NCS OpenVINO ~15.9 fps
      - NCS2 OpenVINO ~15.5 fps
