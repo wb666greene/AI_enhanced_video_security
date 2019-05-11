@@ -19,11 +19,11 @@ In the extras folder is AI_OVmt.py, a simple modification to turn a CPU AI threa
      - NCS OpenVINO ~5.9 fps
      - 2 NCS OpenVINO ~9.9 fps
      - NCS2 OpenVINO ~8.3 fps
-  - Odroid XU-4:
+    Odroid XU-4:
      - NCS OpenVINO ~8.5 fps
      - 2 NCS OpenVINO ~15.9 fps
      - NCS2 OpenVINO ~15.5 fps
-
+      
 
 # Requirements:
   - Python 3.5.2 or newer, 2.7 should work if you can find all the modules.
