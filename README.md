@@ -1,6 +1,8 @@
 # AI_enhanced_video_security
 Python MobileNet-SSD AI using Movidius NCS and/or CPU OpenCV dnn module AI with "netcam" security cameras.
 
+# Much improved version that supports Google Coral TPU as well as NCS/NCS2 and uses MobilenetSSD-v2_coco is here: https://github.com/wb666greene/AI-Person-Detector
+
 This is the evolution of, and essentially the end of, this initial project:
 https://github.com/wb666greene/SecurityDVR_AI_addon
 Further developement is moving to OpenVINO (for NCS2 support) and/or Google's new Coral TPU USB accelerator.
